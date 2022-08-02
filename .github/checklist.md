@@ -33,7 +33,6 @@ This is a checklist of a basic setup for your GitHub repo.
 
 - topics, find the right hashtags!
 
-
 - [] Branch Protection
   - [] Require a pull request before merging
     - [] Require approvals
@@ -45,6 +44,10 @@ This is a checklist of a basic setup for your GitHub repo.
   - [] Require signed commits
   - [] Include administrators
 - [] Declare GitHub Workflow tokens as read only
+- [] Tokens
+  - [] Sonar
+  - [] Snyk
+  - [] SCORECARD_READ_TOKEN
 
 ## Git setup
 

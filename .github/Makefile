@@ -15,7 +15,7 @@ update:
 fmt:
 	@echo "Formatting ..."
 	@go mod tidy
-	@go fmt ./...
+	@go fmt ../...
 	@golines -m 120 -t 4 -w .
 	@gofumpt -w -extra .
 	@gci write --Section Standard --Section Default --Section "Prefix($(shell go list -m))" .
@@ -28,7 +28,7 @@ license:
 .PHONY: lint
 lint: license
 	@echo "Linting ..."
-	@if golangci-lint run --config=./.github/.golangci.yml ../...; then echo "Linting OK"; else return 1; fi;
+	@if golangci-lint run --config=.golangci.yml ../...; then echo "Linting OK"; else return 1; fi;
 
 .PHONY: test
 test:

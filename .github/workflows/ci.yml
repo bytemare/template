@@ -1,4 +1,4 @@
-name: OPAQUE
+name: {{.TEMPLATE}}
 on:
   pull_request:
     branches:
@@ -82,10 +82,10 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=bytemare_opaque
+            -Dsonar.projectKey=bytemare_template
             -Dsonar.organization=bytemare-github
-            -Dsonar.go.coverage.reportPaths=coverage.out
             -Dsonar.sources=.
+            -Dsonar.go.coverage.reportPaths=.github/coverage.out
             -Dsonar.test.exclusions=examples_test.go,tests/**
             -Dsonar.tests=tests/
             -Dsonar.verbose=true
