@@ -3,7 +3,7 @@ GH_ACTIONS = workflows
 .PHONY: update
 update:
 	@echo "Updating dependencies..."
-	@go get -u
+	@$(shell cd ../ go get -u ../...)
 	@go mod tidy
 	@echo "Updating Github Actions pins..."
 	@$(foreach file, $(wildcard $(GH_ACTIONS)/*.yml), pin-github-action $(file);)
@@ -18,7 +18,7 @@ fmt:
 	@go fmt ../...
 	@golines -m 120 -t 4 -w .
 	@gofumpt -w -extra .
-	@gci write --Section Standard --Section Default --Section "Prefix($(shell go list -m))" .
+	@gci write --Section Standard --Section Default --Section "Prefix($(shell go list -m))" ../
 
 .PHONY: license
 license:

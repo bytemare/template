@@ -49,7 +49,7 @@ jobs:
 
       # Test
       - name: Run Tests
-        run: cd .github && make test
+        run: cd .github && make -vet=all ../...
 
   analyze:
     name: Analyze
